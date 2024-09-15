@@ -74,7 +74,9 @@ def load_data(city, month, day):
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
+    # Indicate the start of the calculation process
     print('\nCalculating The Most Frequent Times of Travel...\n')
+    # Record the start time of the calculation for performance tracking
     start_time = time.time()
 
     # display the most common month
@@ -162,11 +164,16 @@ def user_stats(df):
 
 def display_raw_data(df):
     """Ask the user if they want to see raw data and display it 5 rows at a time."""
+    # Initialize the starting index for displaying rows
     start_loc = 0
+    # Loop to repeatedly ask the user if they want to see more data
     while True:
+        # Prompt the user for input to decide if they want to see more raw data
         raw_data = input("\nWould you like to see 5 rows of raw data? Enter yes or no.\n").lower()
+        # If the user wants to see more data, display the next 5 rows
         if raw_data == 'yes':
             print(df.iloc[start_loc:start_loc + 5])
+            # Update the starting index for the next batch of rows
             start_loc += 5
         else:
             break
